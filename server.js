@@ -26,8 +26,3 @@ app.use((error, req, res, next) => {
 app.listen(9001, () => {
     console.log("The server is running on Port 9001")
 })
-
-//todo ;}
-
-//finish TodoForm component
-//

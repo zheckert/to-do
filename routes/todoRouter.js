@@ -19,7 +19,7 @@ todoRouter.post("/", (req, res, next) => {
             res.status(500)
             return next(error)
         }
-        return res.status(201).send(savedTodo)
+        return res.status(200).send(savedTodo)
     })
 })
 
