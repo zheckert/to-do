@@ -5,7 +5,7 @@ import { TodoForm } from "./TodoForm"
 
 export const Todo = (props) => {
     const {title, description, _id} = props
-    const { formEdit, setFormEdit } = useState(false)
+    const [ formEdit, setFormEdit ] = useState(false)
     
     return(
         <div>
@@ -14,7 +14,7 @@ export const Todo = (props) => {
                     <h1>{ title }</h1>
                     <p>{ description }</p>
                     <button onClick={() => props.deleteTodo(_id)}>Delete</button>
-                    <button onClick={() => setFormEdit(formEdit => !formEdit)}>Edit</button>
+                    <button onClick={() => setFormEdit(prevEdit => !prevEdit)}>Edit</button>
                 </>
             :
                 <>
@@ -25,7 +25,7 @@ export const Todo = (props) => {
                     buttonText="Submit changes" 
                     submit={props.editTodo}
                 />
-                <button onClick={() => setFormEdit(formEdit => !formEdit)}>Close</button>
+                <button onClick={() => setFormEdit(prevEdit  => !prevEdit )}>Close</button>
                 </>
             }
         </div>

@@ -36,7 +36,9 @@ export const App = () => {
 
   const editTodo = (updates, todoId) => {
     axios.put(`/todo/${todoId}`, updates)
-      .then(response => console.log(response))
+      .then(response => {
+        setTodos(prevTodos => prevTodos.map(todo => todo._id !== todoId ? todo : response.data))
+      })
       .catch(error => console.log(error))
   }
 
