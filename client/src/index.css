@@ -1,0 +1,29 @@
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header{
+    margin: 20px
+}
+
+.font{
+   font-weight: 200; 
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.grid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr
+}
+
+.todoClass{
+    border: 2px darkslategray solid;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px;
+}

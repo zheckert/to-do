@@ -7,8 +7,12 @@ export const Todo = (props) => {
     const {title, description, _id} = props
     const [ formEdit, setFormEdit ] = useState(false)
     
+    const close = () => {
+        setFormEdit(prevEdit  => !prevEdit )
+    }
+
     return(
-        <div>
+        <div className="todoClass">
             { !formEdit ?
                 <>
                     <h1>{ title }</h1>
@@ -22,8 +26,9 @@ export const Todo = (props) => {
                     title={ title }
                     description={ description }
                     _id={_id}
-                    buttonText="Submit changes" 
+                    buttonText="Save Changes"
                     submit={props.editTodo}
+                    close={close}
                 />
                 <button onClick={() => setFormEdit(prevEdit  => !prevEdit )}>Close</button>
                 </>
