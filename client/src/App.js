@@ -3,6 +3,9 @@ import axios from "axios"
 
 //create index.js file for bulk imports? It might not be necessary for something this size, but it's best practice. 
 //move all functions/requests to this doc and export them as a single variable name? for organizational purposes, ofc ofc
+//strikethrough text on completed items and completed button "mark done"
+//wrap stuff in context so I can clean up this garbage
+
 import { Todo } from "./components/Todo"
 import { TodoForm } from "./components/TodoForm"
 

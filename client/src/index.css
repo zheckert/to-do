@@ -27,3 +27,22 @@
     padding: 10px;
     margin: 10px;
 }
+
+.todoClass:hover{
+    color: white;
+    background-color:#DA4277;
+    transform: rotate(2deg);
+    transition: all ease-in 100ms 0ms;
+}
+/* don't forget to change hover for mobile! */
+
+button {
+    background-color:#2BB6D9; /* Green */
+    border: none;
+    margin: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
