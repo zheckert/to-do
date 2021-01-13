@@ -34,10 +34,9 @@
     transform: rotate(2deg);
     transition: all ease-in 100ms 0ms;
 }
-/* don't forget to change hover for mobile! */
 
 button {
-    background-color:#2BB6D9; /* Green */
+    background-color:#2BB6D9;
     border: none;
     margin: 5px;
     color: white;
