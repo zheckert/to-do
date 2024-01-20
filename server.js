@@ -4,13 +4,16 @@ const app = express()
 const morgan = require("morgan")
 const mongoose = require("mongoose")
 const path = require("path")
-
 const port = process.env.PORT || 9001
-
+const cors = require('cors');
 
 app.use(express.json())
 app.use(morgan("dev"))
 app.use(express.static(path.join(__dirname, "client", "public")))
+app.use(cors({
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200,
+}));
 
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log("Connected to the database"))
@@ -19,7 +22,7 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use("/todo", require("./routes/todoRouter.js"))
 
 app.use((error, req, res, next) => {
-    console.error(error);
+    console.error("see error here", error);
     res.status(500).json({ errorMessage: error.message });
  });
 
