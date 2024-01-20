@@ -14,8 +14,17 @@ export const App = () => {
 
   const getTodos = () => {
     axios.get("/todo")
-      .then(response => setTodos(response.data))
-      .catch(error => console.log(error))
+      .then(response => {
+        console.log("Todo API Response:", response); 
+        setTodos(response.data);
+      })
+      .catch(error => {
+        if (error.response.status === 500) {
+          console.log("Fields can't be empty.");
+        } else {
+          console.log(error);
+        }
+      });
   }
 
   const addTodo = (addTodo) => {

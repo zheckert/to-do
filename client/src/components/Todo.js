@@ -30,7 +30,7 @@ export const Todo = (props) => {
                     submit={props.editTodo}
                     close={close}
                 />
-                <button onClick={() => setFormEdit(prevEdit  => !prevEdit )}>Close</button>
+                <button onClick={() => setFormEdit(prevEdit  => !prevEdit )} style={{marginTop: '6px'}}>Close</button>
                 </>
             }
         </div>

@@ -39,6 +39,11 @@
     transition: all ease-in 100ms 0ms;
 }
 
+.centeredForm {
+    display: flex;
+    justify-content: center;
+  }
+
 button {
     background-color:#2BB6D9;
     border: none;
@@ -47,4 +52,6 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin-right: 6px;
+    cursor: pointer;
   }

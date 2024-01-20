@@ -15,7 +15,7 @@ todoRouter.post("/", async (req, res, next) => {
 try {
     const newTodo = new Todo(req.body);
     const savedTodo = await newTodo.save();
-    res.status(200).json(savedTodo);
+    res.status(201).json(savedTodo);
 } catch (error) {
     res.status(500).json({ errorMessage: error.message });
 }
