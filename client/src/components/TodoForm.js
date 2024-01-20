@@ -1,7 +1,5 @@
 import React, { useState } from "react"
 
-//todo: don't forget to import css classes if they're not working!
-
 export const TodoForm = (props) => {
     const initialInputs = {
         title: props.title || "",
@@ -33,7 +31,7 @@ export const TodoForm = (props) => {
                 value={inputs.title}
                 placeholder="Title of to-do item? (required)"
                 onChange={handleChange}
-                class="inputSpacer"
+                className="inputSpacer"
             />
             <input 
                 type="text"
@@ -41,7 +39,7 @@ export const TodoForm = (props) => {
                 value={inputs.description}
                 placeholder="Description (optional)"
                 onChange={handleChange}
-                class="inputSpacer"
+                className="inputSpacer"
             />
 
             <button onClick={handleSubmit}>{ props.buttonText }</button>

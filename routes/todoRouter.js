@@ -2,53 +2,45 @@ const express = require("express")
 const todoRouter = express.Router()
 const Todo = require("../client/models/todo.js")
 
-todoRouter.get("/", (req, res, next) => {
-    Todo.find((error, todos) => {
-        if(error){
-            res.status(500)
-            return next(error)
-        }
-        return res.status(200).send(todos)
-    })
-})
+todoRouter.get("/", async (req, res, next) => {
+    try {
+      const todos = await Todo.find();
+      res.status(200).json(todos);
+    } catch (error) {
+      res.status(500).json({ errorMessage: error.message });
+    }
+  });
 
-todoRouter.post("/", (req, res, next) => {
-    const newTodo = new Todo(req.body)
-    newTodo.save((error, savedTodo) => {
-        if(error){
-            res.status(500)
-            return next(error)
-        }
-        return res.status(200).send(savedTodo)
-    })
-})
+todoRouter.post("/", async (req, res, next) => {
+try {
+    const newTodo = new Todo(req.body);
+    const savedTodo = await newTodo.save();
+    res.status(200).json(savedTodo);
+} catch (error) {
+    res.status(500).json({ errorMessage: error.message });
+}
+});
 
-todoRouter.delete("/:todoId", (req, res, next) => {
-    Todo.findOneAndDelete(
-        { _id: req.params.todoId },
-        (error, deletedTodo) => {
-            if(error){ 
-                res.status(500)
-                return next(error)
-            }
-            return res.status(200).send(`"${deletedTodo.title}" removed successfully!`)
-        }
-    )
-})
+todoRouter.delete("/:todoId", async (req, res, next) => {
+try {
+    const deletedTodo = await Todo.findOneAndDelete({ _id: req.params.todoId });
+    res.status(200).json(`"${deletedTodo.title}" removed successfully!`);
+} catch (error) {
+    res.status(500).json({ errorMessage: error.message });
+}
+});
 
-todoRouter.put("/:todoId", (req, res, next) => {
-    Todo.findOneAndUpdate(
+todoRouter.put("/:todoId", async (req, res, next) => {
+    try {
+      const modifiedTodo = await Todo.findOneAndUpdate(
         { _id: req.params.todoId },
         req.body,
-        { new: true },
-        (error, modifiedTodo) => {
-            if(error){
-                res.status(500)
-                return next(error)
-            }
-            return res.status(201).send(modifiedTodo)
-        }
-    )
-})
+        { new: true }
+      );
+      res.status(201).json(modifiedTodo);
+    } catch (error) {
+      res.status(500).json({ errorMessage: error.message });
+    }
+  });
 
 module.exports = todoRouter
