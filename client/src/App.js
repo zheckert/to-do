@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
-
-//create index.js file for bulk imports? It might not be necessary for something this size, but it's best practice. 
-//move all functions/requests to this doc and export them as a single variable name? for organizational purposes, ofc ofc
-//strikethrough text on completed items and completed button "mark done"
-//wrap stuff in context so I can clean up this garbage
-
 import { Todo } from "./components/Todo"
 import { TodoForm } from "./components/TodoForm"
+import { GithubIcon } from "./components/GithubIcon"
 
 export const App = () => {
   const [todos, setTodos] = useState([])
@@ -57,10 +52,10 @@ export const App = () => {
 
   return(
     <>
-      <div className="header">
+      <div>
         <div className="center">
-          <h1>TAKE NOTES</h1>
-          <h1 className="font"><a target="_blank" rel="noreferrer" href="https://www.zachheckert.com/">By Zach</a></h1>
+          <div  className="header">TAKE NOTES</div>
+          <div className="font"><span className="name">By Zach</span><span className="github"><GithubIcon /></span></div>
         </div>
         <div className="center">
           <TodoForm 
