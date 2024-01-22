@@ -3,16 +3,24 @@
 }
 
 .header{
-    margin: 20px
+    font-size: 50px;
 }
 
 .font{
-   font-weight: 200; 
+    font-size: 30px;
+    font-weight: 200;
+    margin-bottom: 16px;
+}
+
+.name{
+    margin-right: 10px
 }
 
 .center{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .grid{
@@ -39,6 +47,11 @@
     transition: all ease-in 100ms 0ms;
 }
 
+.centeredForm {
+    display: flex;
+    justify-content: center;
+  }
+
 button {
     background-color:#2BB6D9;
     border: none;
@@ -47,4 +60,6 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin-right: 6px;
+    cursor: pointer;
   }

@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 import { TodoForm } from "./TodoForm"
 
-//Have a checkbox that will mark something complete and alter styling via conditional rendering
-
 export const Todo = (props) => {
     const {title, description, _id} = props
     const [ formEdit, setFormEdit ] = useState(false)
@@ -30,7 +28,7 @@ export const Todo = (props) => {
                     submit={props.editTodo}
                     close={close}
                 />
-                <button onClick={() => setFormEdit(prevEdit  => !prevEdit )}>Close</button>
+                <button onClick={() => setFormEdit(prevEdit  => !prevEdit )} style={{marginTop: '6px'}}>Close</button>
                 </>
             }
         </div>
