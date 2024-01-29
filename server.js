@@ -9,7 +9,7 @@ const cors = require('cors');
 
 app.use(express.json())
 app.use(morgan("dev"))
-app.use(express.static(path.join(__dirname, "client", "public")))
+app.use(express.static(path.join(__dirname, "client", "build")))
 app.use(cors({
     origin: 'http://localhost:3000',
     optionsSuccessStatus: 200,
