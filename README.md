@@ -1,5 +1,8 @@
 # to-do
 
-A simple to-do list with some funky styling. Future plans include adding user authentication so the world isn't sharing the same notes (although I suppose a kind stranger might purchase your groceries if you leave them on the list long enough, so maybe I'm onto something here). 
+![image](https://github.com/zheckert/to-do/assets/67928415/4d330ddf-458f-4dc7-aac4-2255de7a68aa)
 
-Built with the inestimable [MERN Stack](https://www.mongodb.com/mern-stack).
+
+A simple full-stack to-do list with some funky styling. Built with the [MERN Stack](https://www.mongodb.com/mern-stack).
+
+Check it out [HERE](https://zheckert-todo.onrender.com).
