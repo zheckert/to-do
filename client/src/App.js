@@ -4,13 +4,16 @@ import { Todo } from "./components/Todo"
 import { TodoForm } from "./components/TodoForm"
 import { GithubIcon } from "./components/GithubIcon"
 
+axios.defaults.baseURL = process.env.NODE_ENV === 'production'
+  ? 'https://zheckert-todo.onrender.com'
+  : 'http://localhost:3000';
+
 export const App = () => {
   const [todos, setTodos] = useState([])
 
   const getTodos = () => {
     axios.get("/todo")
       .then(response => {
-        console.log("Todo API Response:", response); 
         setTodos(response.data);
       })
       .catch(error => {
